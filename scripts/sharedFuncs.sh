@@ -198,7 +198,7 @@ function download_component() {
             
             if [ "$ariapkg" == "true" ];then
                 show_message "using aria2c to download $4"
-                aria2c -c -x 8 -d "$CACHE_PATH" -o $4 $3
+                aria2c -c -x 16 -s 16 -d "$CACHE_PATH" -o "$4" "$3"
                 downrez=$?
 
             elif [ "$curlpkg" == "true" ];then
